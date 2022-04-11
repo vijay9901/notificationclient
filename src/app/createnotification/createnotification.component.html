@@ -1,0 +1,30 @@
+
+<div class="form-container" >
+
+    <form (submit)="createNotification()">
+      
+      <mat-form-field>
+        <input [(ngModel)]="companyname" name="companyname" matInput placeholder="companyname">
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="companynumber" name="companynumber" matInput placeholder="companynumber">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input [(ngModel)]="companytype" name="companytype" matInput placeholder="companytype">
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="market" name="market" matInput placeholder="market" >
+      </mat-form-field>
+
+  <br>
+  
+
+
+
+     
+      <button mat-raised-button color="primary">Make Appointment</button>
+    </form>
+  </div>
+  
+  

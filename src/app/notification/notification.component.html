@@ -1,0 +1,28 @@
+
+  <div class="center">  
+    <label>Company  :   </label>  
+    <select  (change)="onChange($event.target.value)">  
+        <option disabled>Select Company</option>
+        <option *ngFor="let company of companyName">{{company.companyname}}</option>  
+    </select> 
+    </div>
+
+
+    <hr>
+
+<div *ngFor="let item of status;let i=index;">
+    <div>
+        <h3 class="center" >Comapany : {{item.companyId}}</h3> 
+      <div class="row multi-steps-wrap">
+      
+
+        <ul class="list-unstyled multi-steps" >
+ 
+          <li class="job-status job-created" [ngClass]="{'job-inprogress is-active negative': item.notifications[0].status == true}" >{{item.notifications[0].senddate}}</li>
+          <li class="job-status" [ngClass]="{'job-inprogress is-active negative': item.notifications[1].status == true}" >{{item.notifications[1].senddate}}</li>
+          <li class="job-status job-completed "  [ngClass]="{'job-inprogress is-active negative': item.notifications[2].status == true}" >{{item.notifications[2].senddate}}</li>
+          <li class="job-status job-completed "  [ngClass]="{'job-inprogress is-active negative': item.notifications[3].status == true}" >{{item.notifications[3].senddate}}</li>
+         </ul>
+      </div>
+</div>
+</div>
