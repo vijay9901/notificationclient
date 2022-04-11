@@ -63,6 +63,8 @@ comapanyName(companyId:any){
 
 }
   ngOnInit() {
+
+    
  
   }
 

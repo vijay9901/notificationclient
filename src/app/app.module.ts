@@ -20,6 +20,11 @@ import {
 } from '@angular/material';
 import { NotificationComponent } from './notification/notification.component';
 import { CreatenotificationComponent } from './createnotification/createnotification.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+
+import { NotificationEffects } from './store/effects/notification.effects'
 
 @NgModule({
   declarations: [
@@ -42,7 +47,18 @@ import { CreatenotificationComponent } from './createnotification/createnotifica
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    EffectsModule.forRoot([NotificationEffects]),
+    EffectsModule.forFeature([NotificationEffects]),
+  
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    StoreModule.forFeature('allstate', reducers),
   ],
   providers: [],
   bootstrap: [AppComponent]
